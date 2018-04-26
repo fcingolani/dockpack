@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "lodash": "^4.17.5",
+    "tmp": "^0.0.33"
+  },
+  "name": "dockpack",
+  "version": "0.1.0",
+  "bin": {
+    "dockpack": "./bin/dockpack"
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "author": "Federico Cingolani",
+  "license": "MIT"
+}

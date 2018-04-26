@@ -1,0 +1,15 @@
+#! /usr/bin/env node
+
+const getDockpackConfig = require('../lib/getDockpackConfig');
+const dockerBuild = require('../lib/dockerBuild');
+const dockerRun = require('../lib/dockerRun');
+
+async function main() {
+  
+  let dockpackConfig = getDockpackConfig();
+  await dockerBuild(dockpackConfig);
+  await dockerRun(dockpackConfig);
+
+}
+
+main();
