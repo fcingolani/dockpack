@@ -1,7 +1,8 @@
 {
   "dependencies": {
     "lodash": "^4.17.5",
-    "tmp": "^0.0.33"
+    "tmp": "^0.0.33",
+    "tree-kill": "^1.2.0"
   },
   "name": "dockpack",
   "version": "0.1.0",

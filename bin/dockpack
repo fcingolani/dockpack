@@ -4,11 +4,30 @@ const getDockpackConfig = require('../lib/getDockpackConfig');
 const dockerBuild = require('../lib/dockerBuild');
 const dockerRun = require('../lib/dockerRun');
 
+if (process.platform === "win32") {
+
+  var rl = require("readline").createInterface({
+    input: process.stdin,
+    output: process.stdout
+  });
+
+  rl.on("SIGINT", function () {
+    process.emit("SIGINT");
+  });
+
+}
+
 async function main() {
   
   let dockpackConfig = getDockpackConfig();
-  await dockerBuild(dockpackConfig);
-  await dockerRun(dockpackConfig);
+
+  let dockerImageCreated = await dockerBuild(dockpackConfig);
+
+  if(dockerImageCreated){
+    let dockerContainerRan = await dockerRun(dockpackConfig);
+  }
+
+  process.exit();  
 
 }
 
