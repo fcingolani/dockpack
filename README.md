@@ -18,6 +18,29 @@ Was a fun and fast little project that grew out of my frustration. :)
 npm install -g dockpack
 ```
 
+## Configuration
+
+You can create a `dockpack.config.js` on your project's root directory but it's not really necessary unless you want to customize something:
+
+```
+module.exports = {
+
+  // Choose a custom node version.
+  // By default it will use the same version that your host has.
+  nodeVersion: '6',
+  
+  // An array of custom volumes
+  dockerVolumes: [ 
+    `${__dirname}/../other/path/:/app/src/sabarasaba`
+  ],
+  
+  // If these are set to true, your image will be squashed.
+  // Currently supported on the experimental Docker daemon.
+  experimental: true,
+  squash: true
+}
+```
+
 ## Usage
 
 It's a wrapper around webpack cli, so call it like you would do it with webpack:
