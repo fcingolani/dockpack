@@ -22,7 +22,7 @@ npm install -g dockpack
 
 You can create a `dockpack.config.js` on your project's root directory but it's not really necessary unless you want to customize something:
 
-```
+```js
 module.exports = {
 
   // Choose a custom node version.
